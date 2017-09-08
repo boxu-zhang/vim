@@ -6324,6 +6324,7 @@ init_structs(void)
     OutputType.tp_flags = Py_TPFLAGS_DEFAULT;
     OutputType.tp_doc = "vim message object";
     OutputType.tp_methods = OutputMethods;
+    OutputType.tp_base = &PyFile_Type;
 #if PY_MAJOR_VERSION >= 3
     OutputType.tp_getattro = (getattrofunc)OutputGetattro;
     OutputType.tp_setattro = (setattrofunc)OutputSetattro;
